@@ -1,6 +1,8 @@
 /*
 * This program will test if a UDP port is open and accessable from the internet
 * -----------------------------------------------------------------------------
+* PortUDPTest is using the third party library ASIO (https://think-async.com/Asio/)
+* 
 * This is what the program does:
 * - Gets your public IP address from checkip.amazonaws.com
 * - Creats a local server that listens on the specified udp port and wait for the message.
@@ -14,12 +16,14 @@
 * 
 *   Disclaimer: use at own risk!    (c) CMDR Tyroshious (@DragoneEye) January, 2025
 *
-* Usage: program <port> [-v|--verbose]
-* Example: program 12345
-* Example: program 12345 -v
+* Usage: PortUDPTest <port> [-v|--verbose]
+* Example: PortUDPTest 12345
+* Example: PortUDPTest 12345 -v
 
-    Known issues: Assertion: cannot dereference string iterator because the iterator was invalidated... 
+    Known issues: Assertion: "cannot dereference string iterator because the iterator was invalidated..." 
     Been looking for it, can't find it. :-/
+        Works fine in Release mode, but not in Debug mode.
+
 */
 
 #include <asio.hpp>
@@ -199,16 +203,29 @@ void send_udp_message(const std::string& server_ip, unsigned short port, const s
 }
 
 void usage( char* prog) {
-    std::cout << "\nThis program will test if a UDP port is open and accessable from the internet\n";
-    std::cout << "-----------------------------------------------------------------------------\n";
-    std::cout << "It will send a message to the public IP of the router and wait for a response\n\n";
-    std::cout << "  - If a response is received, the port is open and accessable from the internet\n";
-    std::cout << "  - If no response is received, the port is closed and not accessable from the internet\n";
     std::cout << "\n";
-    std::cout << "Be sure to not run your game/application before running this program, \n";
-    std::cout << "if failure to do so, this test will not be conclusive as the port will be occupied\n" << std::endl;
-    std::cout << "   Disclaimer: use at own risk!    (c) CMDR Tyroshious (@DragoneEye) January, 2025\n\n";
-    std::cerr << "Usage: " << prog << " <port> [-v|--verbose]" << std::endl;
+    std::cout << "    *This program will test if a UDP port is open and accessable from the internet\n";
+    std::cout << "    *-----------------------------------------------------------------------------\n";
+    std::cout << "    *PortUDPTest is using the third party library ASIO(https://think-async.com/Asio/)\n";
+    std::cout << "    *\n";
+    std::cout << "    *This is what the program does :\n";
+    std::cout << "    * -Gets your public IP address from checkip.amazonaws.com\n";
+    std::cout << "    * -Creats a local server that listens on the specified udp port and wait for the message.\n";
+    std::cout << "    * -Sends a message to the public IP of the router and wait for a response from the server\n";
+    std::cout << "    * -If a response is received, the port is open and accessable from the internet\n";
+    std::cout << "    * -If no response is received, the port is closed and not accessable from the internet\n";
+    std::cout << "    * -The message sent is 'Hello, server!'\n";
+    std::cout << "    *\n";
+    std::cout << "    *Be sure to not run your game / application before running this program,\n";
+    std::cout << "    * if failure to do so, this test will not be conclusive as the port will be occupied\n";
+    std::cout << "    *\n";
+    std::cout << "    * Disclaimer: use at own risk!(c)CMDR Tyroshious(@DragoneEye) January, 2025\n";
+    std::cout << "    *\n\n";
+    std::cout << "Known issues : Assertion: 'cannot dereference string iterator because the iterator was invalidated...'\n";
+    std::cout << "Been looking for it, can't find it. :-/\n";
+    std::cout << "Works fine in Release mode, but not in Debug mode.\n\n";
+
+    std::cerr << "Usage: PortUDPTest <port> [-v|--verbose]" << std::endl;
 }
 
 int main(int argc, char* argv[]) {
