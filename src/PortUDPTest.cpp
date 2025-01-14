@@ -219,13 +219,10 @@ void usage( char* prog) {
     std::cout << "    *Be sure to not run your game / application before running this program,\n";
     std::cout << "    * if failure to do so, this test will not be conclusive as the port will be occupied\n";
     std::cout << "    *\n";
-    std::cout << "    * Disclaimer: use at own risk!(c)CMDR Tyroshious(@DragoneEye) January, 2025\n";
+    std::cout << "    * Disclaimer: use at own risk!         (c)CMDR Tyroshious(@DragoneEye) January, 2025\n";
     std::cout << "    *\n\n";
-    std::cout << "Known issues : Assertion: 'cannot dereference string iterator because the iterator was invalidated...'\n";
-    std::cout << "Been looking for it, can't find it. :-/\n";
-    std::cout << "Works fine in Release mode, but not in Debug mode.\n\n";
 
-    std::cerr << "Usage: PortUDPTest <port> [-v|--verbose]" << std::endl;
+    std::cerr << "      Usage: PortUDPTest <port> [-v|--verbose]" << std::endl;
 }
 
 int main(int argc, char* argv[]) {
