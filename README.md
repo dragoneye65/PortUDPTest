@@ -21,8 +21,12 @@
 * Example: PortUDPTest 12345
 * Example: PortUDPTest 12345 -v
 
-    Known issues: Assertion: "cannot dereference string iterator because the iterator was invalidated..." 
-    Been looking for it, can't find it. :-/
-        Works fine in Release mode, but not in Debug mode.
+*   Known issues: Assertion: "cannot dereference string iterator because the iterator was invalidated..." 
+*   Been looking for it, can't find it. :-/
 
+*   - Works fine in Release mode.
+
+
+* Compile on Linux:  PortUDPTest$ make setup && make
+* 
 */

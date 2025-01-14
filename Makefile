@@ -14,7 +14,7 @@ LINKTYPE	:= $(STATIC)
 
 CXX_FLAGS 	:= -Wall -Wextra -std=c++20 $(BUILD) -fpermissive -Wtype-limits $(LINKTYPE)
 CXX			:= g++
-INC_FLAG 	:= -Iinc
+INC_FLAG 	:= -Iinc/asio
 #LIB_FLAG	:= -Llib -Llib/SDL3/Release
 LIB_FLAG	:= 
 

@@ -39,7 +39,7 @@
 struct Globals {
     std::string router_ip;
     std::string public_ip;
-	UINT16 port = 0;
+	unsigned short port = 0;
 	std::string sendmsg = "Hello, server!"; 
 	std::string server_get_public_ip = "checkip.amazonaws.com";
 	std::chrono::seconds timeout = std::chrono::seconds(5);
