@@ -21,8 +21,12 @@
 * Example: PortUDPTest 12345
 * Example: PortUDPTest 12345 -v
 
-*   Known issues: Assertion: "cannot dereference string iterator because the iterator was invalidated..." 
-*   Been looking for it, can't find it. :-/
+*   Known issues:
+*     In Debug build, Assertion: "cannot dereference string iterator because the iterator was invalidated..." 
+*       Been looking for it, can't find it. :-/  yet!
+*     There are some routers that deny accessing the public address from behind the router
+*       Also called NAT loopback, So if this affects you, the port may be open and the program tells you it's closed.  :-/
+*       I'm working on a solution for this.
 
 *   - Works fine in Release mode.
 
